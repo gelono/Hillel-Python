@@ -8,7 +8,10 @@
 my_string = input("Enter your string, please: ")
 symbol = input("Enter number of the symbol, please: ")
 
-print(f"The {symbol} symbol in {my_string} is '{my_string[int(symbol) - 1]}'")
+if my_string.isalpha() and symbol.isdigit() and int(symbol) <= len(my_string):
+    print(f"The {symbol} symbol in {my_string} is '{my_string[int(symbol) - 1]}'")
+else:
+    print("Please, enter a valid data")
 
 """
 2. Вести з консолі строку зі слів за допомогою input() (або скористайтеся константою). 
