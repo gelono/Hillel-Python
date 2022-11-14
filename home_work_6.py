@@ -57,7 +57,13 @@ print(res)
 # Для будь-якої відповіді форма слова "рік" має відповідати значенню віку користувача
 # (1 - рік, 22 - роки, 35 - років і тд...).
 
-age = input('Вкажiть ваш вiк: ')
+def get_age():
+    """
+    This function asks the user age
+    :return: str
+    """
+    age = input('Вкажiть ваш вiк: ')
+    return age
 
 
 def box_office(age):
@@ -66,37 +72,40 @@ def box_office(age):
     :param age: str
     :return: str
     """
-
     def get_years(age):
         """
         This inner function picks up correct word for user age
         :param age: str
         :return: str
         """
-        if 11 <= int(age) <= 19:
+        last_symbol = age[-1]
+        inner_int_age = int(age)
+        if 11 <= inner_int_age <= 19:
             return 'років'
-        elif int(age[-1]) == 1:
+        elif last_symbol == '1':
             return 'рік'
-        elif int(age[-1]) in (2, 3, 4):
+        elif last_symbol in '234':
             return 'роки'
         else:
             return 'років'
 
     if age.isdigit():
-        if int(age) < 1 or int(age) > 120:
+        int_age = int(age)
+        len_age = len(age)
+        if int_age < 1 or int_age > 120:
             return f'Вам {age} {get_years(age)}? Це неможливо'
         else:
             if '7' in age:
                 return f'Вам {age} {get_years(age)}, вам пощастить'
-            elif len(age) == 2:
-                if int(age) < 16:
+            elif len_age == 2:
+                if int_age < 16:
                     return f'Тобі лише {age} {get_years(age)}, а це е фільм для дорослих!'
-                elif int(age) > 65:
+                elif int_age > 65:
                     return f'Вам {age} {get_years(age)}? Покажіть пенсійне посвідчення!'
                 else:
                     return f'Незважаючи на те, що вам {age} {get_years(age)}, білетів всеодно нема!'
-            elif len(age) == 1:
-                if int(age) < 7:
+            elif len_age == 1:
+                if int_age < 7:
                     return f'Тобі ж {age} {get_years(age)}! Де твої батьки?'
                 else:
                     return f'Тобі лише {age} {get_years(age)}, а це е фільм для дорослих!'
@@ -106,5 +115,6 @@ def box_office(age):
         return 'Ви вказали некоректне значення'
 
 
+age = get_age()
 res = box_office(age)
 print(res)
