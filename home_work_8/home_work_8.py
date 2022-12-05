@@ -1,4 +1,4 @@
-from Hillel.home_work_8.library import get_player_figure, get_ai_figure, define_winner, text_msg, rules, put_statistic
+from Hillel.library import get_player_figure, get_ai_figure, define_winner, text_msg, rules, put_statistic
 
 
 # Візьміть гру з попереднього ДЗ ('rock scissors paper lizard spock') і модифікуйте наступним чином:

@@ -1,4 +1,6 @@
+import functools
 from random import choice
+from typing import Union
 
 rules = {
     'Rock': 'Scissors',
@@ -68,5 +70,15 @@ def put_statistic(player_figure, ai_figure, winner):
     :param winner: str
     :return: None
     """
-    with open('statistic.txt', 'a') as file:
+    with open('home_work_8/statistic.txt', 'a') as file:
         file.write(f'The player showed: {player_figure}, the AI showed: {ai_figure}, the winner was {winner}' + '\n')
+
+
+@functools.lru_cache()
+def non_negative_exponentiation_of_args_product(arg_1: Union[int, float], arg_2: Union[int, float], /, *, exponent: Union[int, float] = 1) -> Union[int, float]:
+    if exponent < 0:
+        raise ValueError('Exponent must non negative')
+    else:
+        product = arg_1 * arg_2
+        result = product ** exponent
+    return result
