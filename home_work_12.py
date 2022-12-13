@@ -7,7 +7,7 @@
 # формулу Герона
 
 from abc import ABC, abstractmethod
-from math import sin, sqrt
+from math import sqrt
 
 
 class Point:
