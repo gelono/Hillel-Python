@@ -2,3 +2,4 @@ The player showed: Paper, the AI showed: Rock, the winner was Player
 The player showed: Paper, the AI showed: Rock, the winner was Player
 The player showed: Rock, the AI showed: Rock, the winner was friendship
 The player showed: Scissors, the AI showed: Scissors, the winner was friendship
+The player showed: Rock, the AI showed: Scissors, the winner was Player
